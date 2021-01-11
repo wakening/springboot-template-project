@@ -1,0 +1,35 @@
+spring:
+  profiles: dev
+  cloud:
+    nacos:
+      config:
+        enabled: true
+        server-addr: 127.0.0.1:8848
+        namespace: ea758bd7-1ca1-465f-bb08-35df49689a68
+        file-extension: yml
+        group: DEFAULT_GROUP
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: ea758bd7-1ca1-465f-bb08-35df49689a68
+        group: DEFAULT_GROUP
+        service: example-project
+
+---
+
+spring:
+  profiles: test
+  cloud:
+    nacos:
+      config:
+        enabled: true
+        server-addr: 127.0.0.1:8848
+        namespace: ea758bd7-1ca1-465f-bb08-35df49689a68
+        file-extension: yml
+        group: DEFAULT_GROUP
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: ea758bd7-1ca1-465f-bb08-35df49689a68
+        group: DEFAULT_GROUP
+        service: example-project
+
+---
