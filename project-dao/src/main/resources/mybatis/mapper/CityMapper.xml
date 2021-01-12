@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.example.project.dao.DemoMapper">
+<mapper namespace="com.example.project.dao.CityMapper">
 
     <insert id="insert" parameterType="HashMap">
-        INSERT INTO test_table
-            (id, city)
-        VALUES (#{id}, #{city})
+        INSERT INTO city_info
+            (city_name)
+        VALUES
+            (#{cityName})
     </insert>
 
 </mapper>

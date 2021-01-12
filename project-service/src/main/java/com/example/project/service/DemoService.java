@@ -1,12 +1,12 @@
 package com.example.project.service;
 
-import java.util.Map;
+import com.example.project.entity.City;
 
 /**
  * @author wakening
  */
 public interface DemoService {
 
-    void save(Map<String, Object> data);
+    void save(City city);
 
 }
