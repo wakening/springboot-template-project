@@ -1,0 +1,50 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+    <id>package-tar</id>
+    <formats>
+        <!-- 输出格式 -->
+        <format>tar</format>
+    </formats>
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <fileSets>
+        <!-- 定义代码目录与输出目录映射 -->
+        <fileSet>
+            <directory>target/classes</directory>
+            <outputDirectory>/classes</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>logs</directory>
+            <outputDirectory>/logs</outputDirectory>
+            <excludes>
+                <exclude>/*.log</exclude>
+                <exclude>/backup/*.log</exclude>
+            </excludes>
+            <useDefaultExcludes>true</useDefaultExcludes>
+        </fileSet>
+        <fileSet>
+            <directory>sbin</directory>
+            <outputDirectory>/sbin</outputDirectory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <!--<excludes>-->
+            <!--<exclude>shutdown.sh</exclude>-->
+            <!--<exclude>startup.sh</exclude>-->
+            <!--<exclude>assembly.sh</exclude>-->
+            <!--</excludes>-->
+        </fileSet>
+        <fileSet>
+            <directory>doc</directory>
+            <outputDirectory>/doc</outputDirectory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+        </fileSet>
+    </fileSets>
+    <!-- 依赖包打入lib下s -->
+    <dependencySets>
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>lib</outputDirectory>
+            <!-- 将scope为runtime的依赖包打包到lib目录下。 -->
+            <scope>runtime</scope>
+        </dependencySet>
+    </dependencySets>
+</assembly>

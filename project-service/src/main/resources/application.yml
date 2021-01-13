@@ -1,5 +1,0 @@
-# nacos配置文件名DataId是有规则的，后两个参数在bootstrap.yml内
-# ${spring.application.name} + ${profies.active} + ${spring.cloud.nacos.config.file-extension}
-spring:
-  application:
-    name: example-service
