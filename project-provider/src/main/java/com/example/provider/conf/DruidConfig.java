@@ -14,6 +14,12 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Druid配置
@@ -36,9 +42,15 @@ public class DruidConfig {
     public SqlSessionFactory ds1SqlSessionFactory(@Qualifier("dataSourceDB1") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
+        sqlSessionFactoryBean.setTypeAliases(String.class, Integer.class, Double.class, Float.class,
+                Map.class, HashMap.class, LinkedHashMap.class, List.class, ArrayList.class, LinkedList.class);
         sqlSessionFactoryBean.setMapperLocations(
                 new PathMatchingResourcePatternResolver().getResources("classpath*:mybatis/mapper/*.xml"));
-        return sqlSessionFactoryBean.getObject();
+        SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBean.getObject();
+        if (sqlSessionFactory != null) {
+            sqlSessionFactory.getConfiguration().setMapUnderscoreToCamelCase(true);
+        }
+        return sqlSessionFactory;
     }
 
     @Primary

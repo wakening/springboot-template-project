@@ -3,17 +3,15 @@
 <configuration scan="true" scanPeriod="60 seconds">
     <!-- log base path -->
     <property name="LOG_HOME" value="../logs"/>
-    <property name="SRVNAME" value="example-project"/>
+    <property name="SRVNAME" value="example-project-consumer"/>
     <!-- back log base path -->
     <property name="LOG_BACK_HOME" value="../logs/backup"/>
 
-    <appender name="FILE"
-              class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_HOME}/${SRVNAME}.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rollover -->
-            <fileNamePattern>${LOG_BACK_HOME}/${SRVNAME}.%d{yyyy-MM-dd}.log
-            </fileNamePattern>
+            <fileNamePattern>${LOG_BACK_HOME}/${SRVNAME}.%d{yyyy-MM-dd}.log</fileNamePattern>
 
             <!-- keep 30 days' worth of history -->
             <maxHistory>30</maxHistory>
@@ -37,12 +35,12 @@
         <withJansi>true</withJansi>
         <encoder>
             <!--%d{yyyy-MM-dd HH:mm:ss.SSS} -%5p ${PID:-} [%15.15t] %-40.40logger{39} : %m%n-->
-            <!--<pattern>%cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) - %boldRed(%5p) %blue([%10.10t]) %magenta(%-35.35logger{20})
-                %yellow(%2M) %green(%2L) : %msg%n
-            </pattern>-->
-            <pattern>%cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) -%yellow(%5p) %blue([%10.10t]) %magenta(%-35.35logger{20}) : %msg - %green(%2M) %green(%2L) %n
-            </pattern>
+            <!--<pattern>%cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) - %boldRed(%5p) %blue([%10.10t]) %magenta(%-35.35logger{20}) %yellow(%2M) %green(%2L) : %msg%n</pattern>-->
             <!--<pattern>%d{yyyyMMddHHmmss} [%thread] [%c %2M %2L] %-3p - %m%n</pattern>-->
+            <!--fix size-->
+            <!--<pattern>%cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) -%yellow(%5p) %blue([%10.10t]) %magenta(%-35.35logger{20}) : %msg - %green(%2M) %green(%2L) %n</pattern>-->
+            <!--all-->
+            <pattern>%cyan(%d{yyyyMMdd HH:mm:ss.SSS}) %yellow(%-5level) %blue([%thread]) %magenta(%logger{100}): %msg%n</pattern>
         </encoder>
     </appender>
 
