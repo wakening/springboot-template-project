@@ -23,7 +23,7 @@ public class CityController {
     @Autowired
     private CityService cityService;
 
-    @RequestMapping("/city/{cityName}")
+    @RequestMapping("/city/save/{cityName}")
     public City insert(@PathVariable String cityName) {
         City city = new City();
         city.setCityName(cityName);

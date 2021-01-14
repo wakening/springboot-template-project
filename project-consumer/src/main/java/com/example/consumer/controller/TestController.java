@@ -24,14 +24,14 @@ public class TestController {
     @Autowired
     private TestFeignService testFeignService;
 
-    @GetMapping(value = "/rest/city/{cityName}")
+    @GetMapping(value = "/rest/city/save/{cityName}")
     public String testRestTemplate(@PathVariable String cityName) {
-        String result = restTemplate.getForObject("http://" + ServiceModule.EXAMPLE_PROJECT_PROVIDER + "/city/" + cityName, String.class);
+        String result = restTemplate.getForObject("http://" + ServiceModule.EXAMPLE_PROJECT_PROVIDER + "/city/save/" + cityName, String.class);
         log.info(result);
         return result;
     }
 
-    @GetMapping(value = "/feign/city/{cityName}")
+    @GetMapping(value = "/feign/city/save/{cityName}")
     public String testFeign(@PathVariable String cityName) {
         String result = testFeignService.save(cityName);
         log.info(result);

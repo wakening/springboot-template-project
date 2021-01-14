@@ -9,3 +9,27 @@ spring:
       ui:
         cache:
           no-cache: true
+
+# feign配置
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        loggerLevel: FULL
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+  httpclient:
+    connection-timeout: 60000
+    enabled: true
+
+# jasypt加密配置
+jasypt:
+  encryptor:
+    password: wakening
+
+

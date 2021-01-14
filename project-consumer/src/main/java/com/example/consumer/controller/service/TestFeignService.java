@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = ServiceModule.EXAMPLE_PROJECT_PROVIDER, fallback = TestFeignServiceHystrixImpl.class)
 public interface TestFeignService {
 
-    @GetMapping(value = "/city/{cityName}")
+    @GetMapping(value = "/city/save/{cityName}")
     String save(@PathVariable("cityName") String cityName);
 
     @GetMapping(value = "/city/list")
