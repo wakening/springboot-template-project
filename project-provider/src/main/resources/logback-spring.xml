@@ -34,9 +34,6 @@
           -->
         <withJansi>true</withJansi>
         <encoder>
-            <!--%d{yyyy-MM-dd HH:mm:ss.SSS} -%5p ${PID:-} [%15.15t] %-40.40logger{39} : %m%n-->
-            <!--<pattern>%cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) - %boldRed(%5p) %blue([%10.10t]) %magenta(%-35.35logger{20}) %yellow(%2M) %green(%2L) : %msg%n</pattern>-->
-            <!--<pattern>%d{yyyyMMddHHmmss} [%thread] [%c %2M %2L] %-3p - %m%n</pattern>-->
             <!--fix size-->
             <!--<pattern>%cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) -%yellow(%5p) %blue([%10.10t]) %magenta(%-35.35logger{20}) : %msg - %green(%2M) %green(%2L) %n</pattern>-->
             <!--all-->

@@ -19,10 +19,11 @@
     <url>https://github.com/wakening/springboot-template-project</url>
 
     <properties>
-        <!-- Spring Cloud Version -->
+        <!-- Spring Version -->
         <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
         <spring-cloud-alibaba.version>2.1.0.RELEASE</spring-cloud-alibaba.version>
+        <spring-boot-admin.version>2.2.2</spring-boot-admin.version>
         <!-- Dependency Versions -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -31,7 +32,7 @@
         <mybatis-spring-boot-starter.version>2.1.2</mybatis-spring-boot-starter.version>
         <mysql-connector-java.version>5.1.44</mysql-connector-java.version>
         <netty.version>3.7.0.Final</netty.version>
-        <netty-all.version>4.0.56.Final</netty-all.version>
+        <netty-all.version>4.1.50.Final</netty-all.version>
         <druid.version>1.1.24</druid.version>
         <fastjson.version>1.2.75</fastjson.version>
         <guava.version>16.0.1</guava.version>
@@ -65,6 +66,14 @@
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
                 <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

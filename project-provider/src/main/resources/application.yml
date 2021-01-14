@@ -1,2 +1,11 @@
 server:
   port: 8081
+
+# spring boot admin server配置
+spring:
+  boot:
+    admin:
+      context-path: /
+      ui:
+        cache:
+          no-cache: true
