@@ -49,5 +49,6 @@
 
     <logger name="com.example" level="info"/>
     <logger name="org.springframework.web.servlet" level="info"/>
+    <logger name="springfox.documentation" level="info"/>
 
 </configuration>

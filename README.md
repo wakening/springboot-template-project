@@ -1,6 +1,6 @@
 # template-project
 
-springboot工程模板，预配置，快速完成多数据源、配置中心、服务化等构建，包含打包启动脚本
+    springboot工程模板，预配置，快速完成多数据源、配置中心、服务化等构建，包含打包启动脚本
 
 ```xml
 <modules>
@@ -9,4 +9,11 @@ springboot工程模板，预配置，快速完成多数据源、配置中心、�
     <module>project-client</module>
 </modules>
 ```
-调用链: rpc server: project-client --> rpc server: project-service --> sdk: project-dao
+## 调用链:
+rpc server: project-client --> rpc server: project-service --> sdk: project-dao
+
+## swagger接口文档:
+http://localhost:8081/doc/swagger-ui/
+
+## spring boot admin:
+http://localhost:8081/admin

@@ -26,6 +26,7 @@
         <spring-boot-admin.version>2.2.2</spring-boot-admin.version>
         <feign-httpclient.version>10.4.0</feign-httpclient.version>
         <jasypt-spring-boot-starter.version>3.0.3</jasypt-spring-boot-starter.version>
+        <springfox-boot-starter.version>3.0.0</springfox-boot-starter.version>
         <mybatis-spring-boot-starter.version>2.1.2</mybatis-spring-boot-starter.version>
         <!-- Dependency Versions -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,14 +34,10 @@
         <java.version>1.8</java.version>
         <slf4j-api.version>1.7.29</slf4j-api.version>
         <mysql-connector-java.version>5.1.44</mysql-connector-java.version>
-        <netty.version>3.7.0.Final</netty.version>
-        <netty-all.version>4.1.50.Final</netty-all.version>
         <druid.version>1.1.24</druid.version>
         <fastjson.version>1.2.75</fastjson.version>
         <guava.version>16.0.1</guava.version>
         <commons-lang3.version>3.7</commons-lang3.version>
-        <commons-lang.version>2.6</commons-lang.version>
-        <jackson1.version>1.8.11</jackson1.version>
         <logback.version>1.2.3</logback.version>
         <lombok.version>1.18.16</lombok.version>
     </properties>
@@ -93,6 +90,12 @@
             </dependency>
 
             <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${springfox-boot-starter.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis-spring-boot-starter.version}</version>
@@ -108,20 +111,7 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j-api.version}</version>
-                <scope>compile</scope>
                 <optional>true</optional>
-            </dependency>
-
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty</artifactId>
-                <version>${netty.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-all</artifactId>
-                <version>${netty-all.version}</version>
             </dependency>
 
             <dependency>
@@ -146,24 +136,6 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>commons-lang</groupId>
-                <artifactId>commons-lang</artifactId>
-                <version>${commons-lang.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.codehaus.jackson</groupId>
-                <artifactId>jackson-core-asl</artifactId>
-                <version>${jackson1.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.codehaus.jackson</groupId>
-                <artifactId>jackson-mapper-asl</artifactId>
-                <version>${jackson1.version}</version>
             </dependency>
 
             <dependency>

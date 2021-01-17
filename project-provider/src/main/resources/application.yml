@@ -5,7 +5,7 @@ server:
 spring:
   boot:
     admin:
-      context-path: /
+      context-path: /admin
       ui:
         cache:
           no-cache: true
@@ -31,5 +31,18 @@ feign:
 jasypt:
   encryptor:
     password: wakening
+    algorithm: PBEWITHHMACSHA512ANDAES_256
+
+# swagger配置
+springfox:
+  documentation:
+    swagger:
+      v2:
+        use-model-v3: false
+    swagger-ui:
+      base-url: /doc
+
+
+
 
 
