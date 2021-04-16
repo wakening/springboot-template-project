@@ -14,14 +14,17 @@ if [ -e $PORT ]; then
 fi
 
 #服务启动环境
-EVN=dev
-#EVN=test
-#EVN=prod
+if [ $# -eq 0 ] ; then
+  #ENV=dev
+  #ENV=test
+  ENV=prod
+else
+  ENV=$1
+fi
 
 #JVM启动参数
 #-server:一定要作为第一个参数,在多个CPU时性能佳
 #-Xloggc:记录GC日志,这里建议写成绝对路径,如此便可在任意目录下执行该shell脚本
-#JAVA_OPTS="-ms512m -mx512m -Xmn256m -Djava.awt.headless=true -XX:MaxPermSize=128m"
 JAVA_OPTS="-Dspring.profiles.active=$EVN -Dserver.port=$PORT -Duser.timezone=GMT+8 -server -Xms512m -Xmx2048m -Xloggc:${LOG_DIR}/gc.log"
 
 for jarfile in "$Project_HOME"/lib/*.jar
@@ -66,7 +69,7 @@ startup(){
         nohup java $JAVA_OPTS -classpath $CLASSPATH $APPLICATION_MAIN >/dev/null 2>&1 &
         checkPort
         if [ $PORTED -eq 1 ]; then
-            echo "APP[$APP_NAM],PORT[$PORT] DEPLOY SUCCESS"
+            echo "APP[$APP_NAM],PORT[$PORT],ENV[$ENV] DEPLOY SUCCESS"
             echo "================================================================================================================"
             exit 0
         fi

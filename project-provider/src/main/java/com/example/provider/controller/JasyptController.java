@@ -3,6 +3,7 @@ package com.example.provider.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.jasypt.encryption.StringEncryptor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import java.util.Map;
  * @author wakening
  */
 @Slf4j
+@Profile({"local", "dev", "test"})
 @RequestMapping("/jasypt")
 @RestController
 public class JasyptController {

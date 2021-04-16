@@ -32,5 +32,4 @@ public final class SpringUtil implements ApplicationContextAware {
         context = applicationContext;
     }
 
-
 }

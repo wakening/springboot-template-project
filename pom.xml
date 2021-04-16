@@ -9,12 +9,11 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>project-repository</module>
         <module>project-provider</module>
         <module>project-consumer</module>
     </modules>
 
-    <name>example-project</name>
+    <name>springboot-template-project</name>
     <description>project for Spring Cloud, wakening</description>
     <url>https://github.com/wakening/springboot-template-project</url>
 
@@ -33,13 +32,15 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <slf4j-api.version>1.7.29</slf4j-api.version>
-        <mysql-connector-java.version>5.1.44</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.23</mysql-connector-java.version>
         <druid.version>1.1.24</druid.version>
         <fastjson.version>1.2.75</fastjson.version>
         <guava.version>16.0.1</guava.version>
         <commons-lang3.version>3.7</commons-lang3.version>
+        <commons-io.version>2.5</commons-io.version>
         <logback.version>1.2.3</logback.version>
         <lombok.version>1.18.16</lombok.version>
+        <transmittable-thread-local.version>2.12.1</transmittable-thread-local.version>
     </properties>
 
     <dependencyManagement>
@@ -127,6 +128,12 @@
             </dependency>
 
             <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable-thread-local.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
@@ -136,6 +143,12 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
             </dependency>
 
             <dependency>

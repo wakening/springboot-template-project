@@ -1,6 +1,6 @@
 package com.example.provider.service;
 
-import com.example.repository.entity.City;
+import com.example.provider.entity.CityDTO;
 
 import java.util.List;
 
@@ -9,8 +9,6 @@ import java.util.List;
  */
 public interface CityService {
 
-    void save(City city);
-
-    List<City> findAll();
+    List<CityDTO> findAll();
 
 }
